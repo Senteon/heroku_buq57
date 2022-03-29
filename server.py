@@ -15,7 +15,7 @@ def name(name: str):
 #@cross_origin(supports_credentials=True)
 @app.route("/")
 def index():
-    return {"response" : "Type Something"}
+    return {send_from_directory(app.static_folder, "index.html")}
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

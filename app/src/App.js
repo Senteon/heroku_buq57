@@ -11,7 +11,9 @@ export default function App() {
             <input type="text" id="textbox"/>
               <button
                   onClick={() => {
-                      fetch("/" + document.getElementById("textbox").value)
+                      if (document.getElementById("textbox").value != "")
+                      {
+                        fetch("/" + document.getElementById("textbox").value)
                           .then(response => 
                               response.json()
                           )
@@ -21,6 +23,7 @@ export default function App() {
                           .catch(error => {
                               console.log(error)
                           })
+                      }
                   }}
               >
                 Submit
