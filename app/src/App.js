@@ -11,19 +11,16 @@ export default function App() {
             <input type="text" id="textbox"/>
               <button
                   onClick={() => {
-                      if (document.getElementById("textbox").value != "")
-                      {
-                        fetch("/" + document.getElementById("textbox").value)
-                          .then(response => 
-                              response.json()
-                          )
-                          .then(data => {
-                              setData(data.response)
-                          })
-                          .catch(error => {
-                              console.log(error)
-                          })
-                      }
+                    fetch("/" + document.getElementById("textbox").value)
+                      .then(response => 
+                          response.json()
+                      )
+                      .then(data => {
+                          setData(data.response)
+                      })
+                      .catch(error => {
+                          console.log(error)
+                      })
                   }}
               >
                 Submit
